@@ -17,5 +17,5 @@ html {
 }
 
 body {
-  @apply dark:bg-gray-950;
+  @apply bg-shade-1 min-h-[100dvh] bg-gradient-to-b from-gray-50 to-gray-50 bg-no-repeat text-black dark:from-gray-900/80 dark:to-gray-950/65 dark:text-white;
 }
