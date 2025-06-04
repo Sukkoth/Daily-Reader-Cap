@@ -1,0 +1,6 @@
+{
+  "server": {
+    "url": "http://100.69.225.28:5173",
+    "cleartext": true
+  }
+}

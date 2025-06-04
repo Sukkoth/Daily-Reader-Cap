@@ -1,0 +1,21 @@
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap");
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --color-primary: ##f28c28;
+  --font-primary: "IBM Plex Mono", monospace;
+  --color-shade-1: #030712;
+  --color-shade-2: #1e2939;
+  --color-light-1: #fafaf9;
+  --color-light-2: #f3f4f6;
+}
+
+html {
+  font-family: var(--font-primary);
+}
+
+body {
+  @apply dark:bg-gray-950;
+}
