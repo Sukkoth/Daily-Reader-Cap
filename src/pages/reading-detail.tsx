@@ -62,7 +62,7 @@ function ReadingDetail() {
       <div
         {...handler}
         className={cn(
-          "flex flex-grow flex-col px-5",
+          "mx-auto flex max-w-2xl flex-grow flex-col px-5",
           readingData?.readings.length === 1 && "items-center justify-center",
         )}
       >
