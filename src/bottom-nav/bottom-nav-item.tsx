@@ -16,7 +16,7 @@ function BottomNavItem({ icon, label, to }: Props) {
     <button
       id="bt"
       className={cn(
-        "active:bg-light-2 flex flex-1 flex-col items-center p-1 py-3 text-xs text-gray-400 duration-300 dark:text-gray-500 dark:active:bg-gray-900", // added scale effect
+        "active:bg-light-2 flex flex-1 cursor-pointer flex-col items-center p-1 py-3 text-xs text-gray-400 duration-300 hover:text-black dark:text-gray-500 hover:dark:text-white dark:active:bg-gray-900", // added scale effect
         {
           "text-black dark:text-white": isActive,
         },
