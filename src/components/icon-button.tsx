@@ -4,7 +4,7 @@ import { cn } from "../utils/cn";
 type Props = {
   icon: ReactElement<SVGProps<SVGSVGElement>>;
   size?: "sm" | "md" | "lg";
-  onClick?: VoidFunction;
+  onClick?: (e: React.MouseEvent) => void | VoidFunction;
 };
 
 export default function IconButton({ icon, size = "md", onClick }: Props) {
