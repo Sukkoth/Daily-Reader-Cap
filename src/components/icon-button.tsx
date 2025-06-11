@@ -18,7 +18,7 @@ export default function IconButton({ icon, size = "md", onClick }: Props) {
     <button
       onClick={onClick}
       className={cn(
-        "flex items-center justify-center transition-all duration-150",
+        "flex cursor-pointer items-center justify-center transition-all duration-150 hover:scale-105",
         sizeClasses[size],
       )}
     >
