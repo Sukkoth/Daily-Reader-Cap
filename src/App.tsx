@@ -7,6 +7,7 @@ import Calendar from "./pages/calendar";
 import Favorites from "./pages/favorites";
 import Settings from "./pages/settings";
 import { useStatusBarColor } from "./hooks/useStatusBarColor";
+import ReadingDetail from "./pages/reading-detail";
 
 function App() {
   useStatusBarColor();
@@ -30,14 +31,7 @@ function App() {
         <Route path="/settings" element={<Settings />} />
       </Route>
       <Route>
-        <Route
-          path="/readings/:date"
-          element={
-            <h1 className="p-2 text-white">
-              Reading for {new Date().toLocaleDateString()}
-            </h1>
-          }
-        />
+        <Route path="/readings/:date" element={<ReadingDetail />} />
       </Route>
     </Routes>
   );
