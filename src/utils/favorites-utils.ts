@@ -19,7 +19,9 @@ export function parseReadingForFavorite(reading: Reading): Reading {
  * @returns The list of favorites with the favorite removed.
  */
 export function removeFavorite(favorites: Reading[], favorite: Reading) {
-  return favorites.filter((fav) => fav.date !== favorite.date);
+  return favorites.filter(
+    (fav) => fav.readings[0].book !== favorite.readings[0].book,
+  );
 }
 
 /**
@@ -39,7 +41,9 @@ export function addFavorite(favorites: Reading[], favorite: Reading) {
  * @returns True if the reading is a favorite, false otherwise.
  */
 export function isFavorite(favorites: Reading[], favorite: Reading) {
-  return favorites.find((fav) => fav.date === favorite.date);
+  return favorites.find(
+    (fav) => fav.readings[0].book === favorite.readings[0].book,
+  );
 }
 
 /**
