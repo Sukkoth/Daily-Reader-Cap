@@ -13,7 +13,7 @@ export default function CalendarHeader({
     <div className="flex items-center justify-between select-none">
       <div
         onClick={() => handleMonthChange(-1)}
-        className="border-border-shade hover:bg-border-light dark:hover:bg-border-shade cursor-pointer rounded-lg border p-1"
+        className="border-border-shade hover:bg-border-light dark:hover:bg-border-shade cursor-pointer rounded-lg border p-2 active:bg-gray-400/20"
       >
         <ChevronLeft />
       </div>
@@ -22,7 +22,7 @@ export default function CalendarHeader({
       </h1>
       <div
         onClick={() => handleMonthChange(1)}
-        className="border-border-shade hover:bg-border-light dark:hover:bg-border-shade cursor-pointer rounded-lg border p-1"
+        className="border-border-shade hover:bg-border-light dark:hover:bg-border-shade cursor-pointer rounded-lg border p-2 active:bg-gray-400/20"
       >
         <ChevronRight />
       </div>
