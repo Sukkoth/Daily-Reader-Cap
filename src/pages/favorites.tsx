@@ -12,7 +12,7 @@ function Favorites() {
   }
 
   return (
-    <div className="flex h-[92.5dvh] flex-col p-5">
+    <div className="flex h-[90.5dvh] flex-col p-4 pt-4">
       <h1 className="text-2xl font-medium">Favorites</h1>
       <p className="pt-2 text-gray-400">Your saved verses</p>
 
