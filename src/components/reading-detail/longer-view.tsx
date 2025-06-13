@@ -78,7 +78,8 @@ function LongerView({ reading }: Props) {
             </div>
           </div>
           <p
-            className={cn("pt-5 text-lg leading-9 font-medium", {
+            style={{ fontSize: settings.articleFontSize }}
+            className={cn("pt-5 leading-9 font-medium", {
               "text-right": alignment === "right",
               "text-left": alignment === "left",
               "text-center": alignment === "center",

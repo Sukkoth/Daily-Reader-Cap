@@ -30,7 +30,9 @@ function SimpleView({ reading }: Props) {
         "text-justify": alignment === "justify",
       })}
     >
-      <p className="text-3xl font-medium">{reading.readings[0].text}</p>
+      <p style={{ fontSize: settings.quoteFontSize }} className="font-medium">
+        {reading.readings[0].text}
+      </p>
       <p className="pt-5 text-gray-400">{reading.readings[0].book}</p>
       <div className="inline-flex gap-5 pt-5 text-gray-400">
         {favorites.find((fav: Reading) => fav.date === reading.date) ? (

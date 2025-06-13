@@ -1,5 +1,6 @@
 import { Sheet } from "react-modal-sheet";
 import AlignmentSettings from "./alignment-settings";
+import FontSettings from "./font-settings";
 
 type Props = {
   onClose?: () => void;
@@ -23,14 +24,7 @@ export default function BottomSheetItem({ onClose, readingType }: Props) {
               .map((item, i) => (i === 0 ? item.toUpperCase() : item))}{" "}
             Reading Mode Settings
           </h1>
-          <div className="mt-3 flex items-baseline justify-center gap-15">
-            <button className="relative text-2xl font-medium after:absolute after:-top-2 after:size-2 after:text-xl after:content-['-']">
-              A
-            </button>
-            <button className="relative text-3xl font-medium after:absolute after:-top-2 after:size-2 after:text-xl after:content-['+']">
-              A
-            </button>
-          </div>
+          <FontSettings mode={readingType} />
           <AlignmentSettings mode={readingType} key={readingType} />
         </Sheet.Content>
       </Sheet.Container>
