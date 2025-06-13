@@ -49,7 +49,7 @@ function Calendar() {
           />
         </div>
       </div>
-      <CalendarHolidays holidays={holidays} />
+      <CalendarHolidays monthlyHolidays={eachDayHolidays} />
     </div>
   );
 }
