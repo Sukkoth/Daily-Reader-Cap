@@ -1,4 +1,4 @@
-import { Calendar, Sun } from "lucide-react";
+import { Calendar, Moon, Sun } from "lucide-react";
 import { useTheme } from "../providers/theme-provider";
 import IconButton from "./icon-button";
 
@@ -12,7 +12,13 @@ function HomeHeader() {
       <div className="flex items-center justify-between">
         <h1 className="text-[26px] font-medium">Daily Readings</h1>
         <IconButton
-          icon={<Sun className="size-5 text-gray-400" />}
+          icon={
+            theme === "light" ? (
+              <Sun className="size-5 text-orange-400" />
+            ) : (
+              <Moon className="size-5 text-orange-400" />
+            )
+          }
           onClick={changeTheme}
         />
       </div>
