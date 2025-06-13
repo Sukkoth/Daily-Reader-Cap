@@ -4,6 +4,8 @@ import IconButton from "../icon-button";
 import useFavorites from "../../app-state/hooks/useFavorites";
 import { toggleFavorite } from "../../utils/favorites-utils";
 import { useScrollToHash } from "../../hooks/useScrollToHash";
+import { cn } from "../../utils/cn";
+import useAppSettings from "../../app-state/hooks/useAppSettings";
 
 type Props = {
   reading: Reading;
@@ -11,6 +13,9 @@ type Props = {
 
 function LongerView({ reading }: Props) {
   const [favorites, setFavorites] = useFavorites();
+  const [settings] = useAppSettings();
+
+  const alignment = settings.articleAlign;
 
   function handleAddFavorite(readingItem: ReadingItem) {
     const readingPrepared = {
@@ -58,14 +63,21 @@ function LongerView({ reading }: Props) {
                 />
               ) : (
                 <IconButton
-                  icon={<Star />}
+                  icon={<Star className="text-gray-400" />}
                   onClick={() => handleAddFavorite(readingItem)}
                 />
               )}
               <IconButton icon={<Share2 className="text-gray-400" />} />
             </div>
           </div>
-          <p className="pt-5 text-justify text-lg leading-9 font-medium">
+          <p
+            className={cn("pt-5 text-lg leading-9 font-medium", {
+              "text-right": alignment === "right",
+              "text-left": alignment === "left",
+              "text-center": alignment === "center",
+              "text-justify": alignment === "justify",
+            })}
+          >
             {readingItem.text}
           </p>
         </div>
