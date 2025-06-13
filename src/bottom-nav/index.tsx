@@ -10,9 +10,14 @@ function BottomNav() {
   ];
 
   return (
-    <section className="flex items-center justify-evenly border-t dark:border-t-gray-800 border-t-gray-200">
+    <section className="flex items-center justify-evenly border-t border-t-gray-200 dark:border-t-gray-800">
       {bottomNavItems.map((item) => (
-        <BottomNavItem label={item.label} icon={item.icon} to={item.to} />
+        <BottomNavItem
+          key={item.label}
+          label={item.label}
+          icon={item.icon}
+          to={item.to}
+        />
       ))}
     </section>
   );
