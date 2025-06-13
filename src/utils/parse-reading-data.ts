@@ -1,11 +1,13 @@
 import type {
   FormattedHolidays,
   Holidays,
+  HolidaysForEachDay,
+  HolidayType,
   RawReading,
   Reading,
 } from "../types";
 import { readingsData } from "../data/data";
-import { isSunday } from "date-fns";
+import { format, isSunday } from "date-fns";
 
 export function parseReadingData(reading: RawReading): Reading {
   return {
@@ -69,22 +71,67 @@ export function getHolidaysInMonth(selectedDate: Date): FormattedHolidays {
         reading?.holidays?.christian.map((holiday) => ({
           date: new Date(item.date),
           name: holiday,
+          type: "christian",
         })),
       );
       holidays.mekaneYesus = holidays.mekaneYesus.concat(
         reading?.holidays?.mekaneYesus.map((holiday) => ({
           date: new Date(item.date),
           name: holiday,
+          type: "mekaneYesus",
         })),
       );
       holidays.others = holidays.others.concat(
         reading?.holidays?.others.map((holiday) => ({
           date: new Date(item.date),
           name: holiday,
+          type: "others",
         })),
       );
     }
   });
 
   return holidays;
+}
+
+export function getHolidaysForEachDay(
+  holidays: FormattedHolidays,
+): HolidaysForEachDay[] {
+  const daysWithHolidays = holidays.christian.concat(
+    holidays.mekaneYesus,
+    holidays.others,
+  );
+
+  const holidaysForEachDay: {
+    [key: string]: {
+      holidays: { name: string; type: HolidayType }[];
+    };
+  } = {};
+
+  daysWithHolidays.forEach((holiday) => {
+    const date = format(holiday.date, "yyyy-MM-dd");
+    if (!holidaysForEachDay[date]) {
+      holidaysForEachDay[date] = { holidays: [] };
+    }
+    holidaysForEachDay[date].holidays.push({
+      name: holiday.name,
+      type: holiday.type,
+    });
+  });
+
+  return Object.keys(holidaysForEachDay).map((date) => ({
+    date: new Date(date),
+    holidays: holidaysForEachDay[date].holidays,
+    count: {
+      christian: holidaysForEachDay[date].holidays.filter(
+        (holiday) => holiday.type === "christian",
+      ).length,
+      mekaneYesus: holidaysForEachDay[date].holidays.filter(
+        (holiday) => holiday.type === "mekaneYesus",
+      ).length,
+      others: holidaysForEachDay[date].holidays.filter(
+        (holiday) => holiday.type === "others",
+      ).length,
+    },
+  }));
 }

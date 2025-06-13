@@ -5,7 +5,10 @@ import { useSwipeable } from "react-swipeable";
 import CalendarNumbers from "../components/calendar-numbers";
 import CalendarHeader from "../components/calendar-header";
 import CalendarHolidays from "../components/calendar-holidays";
-import { getHolidaysInMonth } from "../utils/parse-reading-data";
+import {
+  getHolidaysForEachDay,
+  getHolidaysInMonth,
+} from "../utils/parse-reading-data";
 
 function Calendar() {
   const [searchParams, setSearchParams] = useSearchParams();
@@ -27,6 +30,8 @@ function Calendar() {
 
   const holidays = getHolidaysInMonth(selectedDate);
 
+  const eachDayHolidays = getHolidaysForEachDay(holidays);
+
   return (
     <div
       className="flex h-[90.5dvh] flex-col overflow-hidden p-4 pt-5"
@@ -38,7 +43,10 @@ function Calendar() {
           handleMonthChange={handleMonthChange}
         />
         <div className="mt-8">
-          <CalendarNumbers selectedDate={selectedDate} />
+          <CalendarNumbers
+            selectedDate={selectedDate}
+            holidays={eachDayHolidays}
+          />
         </div>
       </div>
       <CalendarHolidays holidays={holidays} />

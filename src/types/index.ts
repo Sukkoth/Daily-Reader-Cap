@@ -14,10 +14,25 @@ export type Holidays = {
   others: string[];
 };
 
+export type HolidayType = "christian" | "mekaneYesus" | "others";
+
 export type FormattedHolidays = {
-  christian: { date: Date; name: string }[];
-  mekaneYesus: { date: Date; name: string }[];
-  others: { date: Date; name: string }[];
+  christian: { date: Date; name: string; type: HolidayType }[];
+  mekaneYesus: { date: Date; name: string; type: HolidayType }[];
+  others: { date: Date; name: string; type: HolidayType }[];
+};
+
+export type HolidaysForEachDay = {
+  date: Date;
+  holidays: {
+    name: string;
+    type: HolidayType;
+  }[];
+  count: {
+    christian: number;
+    mekaneYesus: number;
+    others: number;
+  };
 };
 
 // type Holiday = Pick<RawReading, "date" | "holidays">;
