@@ -1,6 +1,6 @@
 export const readingsData = [
   {
-    date: "2025-04-30",
+    date: "2025-06-17",
     description: null,
     holidays: '{"christian": [], "mekaneYesus": [], "others": []}',
     readings:
@@ -8,7 +8,7 @@ export const readingsData = [
     title: null,
   },
   {
-    date: "2025-05-01",
+    date: "2025-06-14",
     description: null,
     holidays: '{"christian": [], "mekaneYesus": [], "others": []}',
     readings:
@@ -16,7 +16,7 @@ export const readingsData = [
     title: null,
   },
   {
-    date: "2025-05-02",
+    date: "2025-06-15",
     description: null,
     holidays: '{"christian": [], "mekaneYesus": [], "others": []}',
     readings:
@@ -24,7 +24,7 @@ export const readingsData = [
     title: null,
   },
   {
-    date: "2025-05-03",
+    date: "2025-06-16",
     description: null,
     holidays: '{"christian": [], "mekaneYesus": [], "others": []}',
     readings:
@@ -32,7 +32,7 @@ export const readingsData = [
     title: null,
   },
   {
-    date: "2025-05-04",
+    date: "2025-06-13",
     description: "3rd Sunday of Easter (Year A)",
     holidays:
       '{"christian": [], "mekaneYesus": ["Foundation of Mekane Yesus"], "others": ["3rd Sunday of Western"]}',
@@ -41,7 +41,7 @@ export const readingsData = [
     title: "Recognizing the Risen Lord",
   },
   {
-    date: "2025-05-05",
+    date: "2025-06-18",
     description: null,
     holidays: '{"christian": [], "mekaneYesus": [], "others": []}',
     readings:
@@ -49,7 +49,7 @@ export const readingsData = [
     title: null,
   },
   {
-    date: "2025-05-06",
+    date: "2025-06-19",
     description: null,
     holidays: '{"christian": [], "mekaneYesus": [], "others": []}',
     readings:
@@ -57,7 +57,7 @@ export const readingsData = [
     title: null,
   },
   {
-    date: "2025-05-07",
+    date: "2025-06-20",
     description: "2nd Sunday in Lent",
     holidays:
       '{"christian": ["Feast of Divine Mercy"], "mekaneYesus": ["Mekane Yesus founded", "The other foundation"], "others": []}',
@@ -66,7 +66,7 @@ export const readingsData = [
     title: "God's Endless Mercy",
   },
   {
-    date: "2025-05-08",
+    date: "2025-06-21",
     description: null,
     holidays: '{"christian": [], "mekaneYesus": [], "others": []}',
     readings:
@@ -74,7 +74,7 @@ export const readingsData = [
     title: null,
   },
   {
-    date: "2025-05-09",
+    date: "2025-06-22",
     description: null,
     holidays:
       '{"christian": ["Annunciation"], "mekaneYesus": [], "others": []}',
@@ -83,7 +83,7 @@ export const readingsData = [
     title: null,
   },
   {
-    date: "2025-05-10",
+    date: "2025-06-23",
     description: null,
     holidays: '{"christian": [], "mekaneYesus": [], "others": []}',
     readings:
@@ -91,7 +91,7 @@ export const readingsData = [
     title: null,
   },
   {
-    date: "2025-05-11",
+    date: "2025-06-24",
     description: null,
     holidays: '{"christian": [], "mekaneYesus": [], "others": []}',
     readings:
@@ -99,7 +99,7 @@ export const readingsData = [
     title: null,
   },
   {
-    date: "2025-05-12",
+    date: "2025-06-25",
     description: null,
     holidays: '{"christian": [], "mekaneYesus": [], "others": []}',
     readings:
@@ -107,7 +107,7 @@ export const readingsData = [
     title: null,
   },
   {
-    date: "2025-05-13",
+    date: "2025-06-26",
     description: null,
     holidays: '{"christian": [], "mekaneYesus": [], "others": []}',
     readings:
