@@ -1,6 +1,7 @@
 import { CalendarDaysIcon, Moon, Sun } from "lucide-react";
 import { useTheme } from "../providers/theme-provider";
 import IconButton from "./icon-button";
+import { format } from "date-fns";
 
 function HomeHeader() {
   const { theme, setTheme } = useTheme();
@@ -24,7 +25,7 @@ function HomeHeader() {
       </div>
       <div className="bg-light-2 dark:bg-shade-2 my-5 flex items-center gap-2 rounded-xl border border-gray-200 px-3 py-4 dark:border-gray-700">
         <CalendarDaysIcon className="size-5 text-gray-400" />
-        <p>Monday, March 3, 2025</p>
+        <p>{format(new Date(), "EEEE, MMMM d, yyyy")}</p>
       </div>
     </>
   );
