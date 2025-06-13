@@ -12,7 +12,7 @@ function Preview() {
   return (
     <div
       onClick={() => navigate(`/readings/${today}`)}
-      className="bg-light-2 dark:bg-shade-2 flex flex-grow cursor-pointer flex-col items-center justify-center rounded-xl border border-gray-200 px-8 text-center text-xl leading-8 font-medium dark:border-gray-700"
+      className="bg-light-2 dark:bg-shade-2 dark:hover:bg-shade-2/70 flex flex-grow cursor-pointer flex-col items-center justify-center rounded-xl border border-gray-200 px-8 text-center text-xl leading-8 font-medium hover:bg-gray-200/60 dark:border-gray-700"
     >
       {!todaysReading?.readings.length && <NoReading />}
       {todaysReading?.readings.length === 1 && (
