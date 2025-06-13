@@ -5,7 +5,7 @@ import { Settings, X } from "lucide-react";
 import { getReadingData, getTopSubTitle } from "../utils/parse-reading-data";
 import SimpleView from "../components/reading-detail/simple-view";
 import NoReading from "../components/reading-detail/no-reading";
-import { useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import LongerView from "../components/reading-detail/longer-view";
 import { cn } from "../utils/cn";
@@ -37,6 +37,22 @@ function ReadingDetail() {
   const goBack = () => {
     navigate(-1);
   };
+
+  const handleKeyDown = useCallback(
+    (event: KeyboardEvent) => {
+      if (event.key === "ArrowLeft" || event.key === "ArrowRight") {
+        setReadingDate((prev) =>
+          addDays(prev, event.key === "ArrowLeft" ? -1 : 1),
+        );
+      }
+    },
+    [setReadingDate],
+  );
+
+  useEffect(() => {
+    document.addEventListener("keydown", handleKeyDown);
+    return () => document.removeEventListener("keydown", handleKeyDown);
+  }, [handleKeyDown]);
 
   return (
     <div
