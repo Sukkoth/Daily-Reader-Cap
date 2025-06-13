@@ -56,18 +56,13 @@ function ReadingDetail() {
               setSettingsOpen((prev) => !prev);
             }}
           />
-          <button
-            className="flex size-8 items-center justify-center"
-            onClick={goBack}
-          >
-            <X className="size-6" />
-          </button>
+          <IconButton icon={<X className="size-6" />} onClick={goBack} />
         </div>
       </div>
       <div
         {...handler}
         className={cn(
-          "mx-auto flex max-w-2xl flex-grow flex-col overflow-auto px-5",
+          "scrollbar-hidden mx-auto flex max-w-2xl flex-grow flex-col overflow-auto px-5",
           readingData?.readings.length === 1 && "items-center justify-center",
         )}
       >
@@ -80,7 +75,10 @@ function ReadingDetail() {
         )}
       </div>
       {settingsOpen && (
-        <BottomSheetItem onClose={() => setSettingsOpen(false)} />
+        <BottomSheetItem
+          onClose={() => setSettingsOpen(false)}
+          readingType={readingData?.readings.length === 1 ? "simple" : "longer"}
+        />
       )}
     </div>
   );
