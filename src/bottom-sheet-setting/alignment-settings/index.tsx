@@ -13,17 +13,18 @@ type AlignmentSettingsList = {
 }[];
 
 function AlignmentSettings({ mode }: Props) {
+  const settingItemKey = mode === "longer" ? "articleAlign" : "quoteAlign";
+
   const [settings, setSettings] = useAppSettings();
 
   function changeAlignment(alignment: TextAlign) {
     setSettings((prev) => ({
       ...prev,
-      [mode === "longer" ? "articleAlign" : "quoteAlign"]: alignment,
+      [settingItemKey]: alignment,
     }));
   }
 
-  const activeAlignment =
-    settings[mode === "longer" ? "articleAlign" : "quoteAlign"];
+  const activeAlignment = settings[settingItemKey];
 
   const alignmentSetting: AlignmentSettingsList = [
     {

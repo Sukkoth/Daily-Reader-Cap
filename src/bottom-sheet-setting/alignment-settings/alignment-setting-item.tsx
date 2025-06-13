@@ -11,7 +11,7 @@ function AlignmentSettingItem({ icon, active, onClick }: Props) {
     <button
       onClick={onClick}
       className={cn(
-        "cursor-pointer rounded-lg p-3 transition-all duration-150 hover:bg-gray-300",
+        "cursor-pointer rounded-lg p-3 transition-all duration-150 hover:bg-gray-300 dark:hover:bg-gray-500",
         {
           "bg-gray-300 dark:bg-gray-500": active,
         },
