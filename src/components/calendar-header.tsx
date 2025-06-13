@@ -10,7 +10,7 @@ export default function CalendarHeader({
   handleMonthChange,
 }: Props) {
   return (
-    <div className="flex items-center justify-between">
+    <div className="flex items-center justify-between select-none">
       <div
         onClick={() => handleMonthChange(-1)}
         className="border-border-shade hover:bg-border-light dark:hover:bg-border-shade cursor-pointer rounded-lg border p-1"

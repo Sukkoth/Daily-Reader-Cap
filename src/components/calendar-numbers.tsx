@@ -16,7 +16,7 @@ export default function CalendarNumbers({ selectedDate }: Props) {
   const todaysDate = today.getDate();
 
   return (
-    <div className="mt-5 grid grid-cols-7 justify-evenly gap-3 text-center">
+    <div className="mt-5 grid grid-cols-7 justify-evenly gap-3 text-center select-none">
       <h1 className="font-medium text-gray-400">S</h1>
       <h1 className="font-medium text-gray-400">M</h1>
       <h1 className="font-medium text-gray-400">T</h1>
