@@ -10,7 +10,7 @@ function MainLayout() {
         "pt-5": Capacitor.isNativePlatform(),
       })}
     >
-      <section className="flex-grow overflow-y-auto">
+      <section className="scrollbar-hidden flex-grow overflow-y-auto">
         <Outlet />
       </section>
       <BottomNav />

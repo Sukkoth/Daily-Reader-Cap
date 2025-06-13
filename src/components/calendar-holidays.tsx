@@ -7,7 +7,7 @@ type Props = {
 };
 export default function CalendarHolidays({ holidays }: Props) {
   return (
-    <div className="mt-8 overflow-auto">
+    <div className="scrollbar-hidden mt-8 overflow-auto">
       {Object.entries(holidays).map(([holidayType, holidays], index) => (
         <div key={index}>
           <ul>

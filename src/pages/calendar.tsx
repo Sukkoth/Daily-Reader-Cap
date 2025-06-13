@@ -29,7 +29,7 @@ function Calendar() {
 
   return (
     <div
-      className="flex h-[90.5dvh] flex-col overflow-clip p-4 pt-5"
+      className="flex h-[90.5dvh] flex-col overflow-hidden p-4 pt-5"
       {...handler}
     >
       <div>
