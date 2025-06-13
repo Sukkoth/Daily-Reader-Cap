@@ -4,11 +4,11 @@ function Settings() {
   const navigate = useNavigate();
 
   return (
-    <div className="flex items-center justify-center flex-col h-[92.5dvh]">
+    <div className="flex h-[90.5dvh] flex-col items-center justify-center">
       <h1>This is settings page</h1>
       <button
         onClick={() => navigate("/")}
-        className="px-5 mt-4 py-2 bg-gray-800 rounded-xl"
+        className="mt-4 rounded-xl bg-gray-800 px-5 py-2"
       >
         Back to home
       </button>
