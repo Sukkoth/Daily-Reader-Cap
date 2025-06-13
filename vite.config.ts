@@ -5,5 +5,11 @@ import Terminal from "vite-plugin-terminal";
 
 // https://vite.dev/config/
 export default defineConfig({
-  plugins: [react(), tailwindcss(), Terminal()],
+  plugins: [
+    react(),
+    tailwindcss(),
+    Terminal({
+      // console: "terminal",
+    }),
+  ],
 });
