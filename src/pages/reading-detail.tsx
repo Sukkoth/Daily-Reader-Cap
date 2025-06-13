@@ -1,5 +1,6 @@
 import { addDays, format, isValid } from "date-fns";
 import { useSwipeable } from "react-swipeable";
+import { Capacitor } from "@capacitor/core";
 import { Settings, X } from "lucide-react";
 import { getReadingData, getTopSubTitle } from "../utils/parse-reading-data";
 import SimpleView from "../components/reading-detail/simple-view";
@@ -38,8 +39,12 @@ function ReadingDetail() {
   };
 
   return (
-    <div className="relative flex min-h-[100dvh] flex-col">
-      <div className="dark:border-b-border-shade bg-light-1 dark:bg-shade-1 border-b-border-light sticky top-0 z-10 flex items-center justify-between border-b p-4 py-2">
+    <div
+      className={cn("relative flex h-[100dvh] flex-col overflow-hidden", {
+        "pt-6": Capacitor.isNativePlatform(),
+      })}
+    >
+      <div className="dark:border-b-border-shade bg-light-1 border-b-border-light sticky top-0 z-10 flex items-center justify-between border-b p-4 py-2 dark:bg-transparent">
         <div className="space-y-2">
           <h1 className="text-xl font-medium">{headerDate}</h1>
           <p className="text-gray-400">{topSubTitle}</p>
@@ -62,7 +67,7 @@ function ReadingDetail() {
       <div
         {...handler}
         className={cn(
-          "mx-auto flex max-w-2xl flex-grow flex-col px-5",
+          "mx-auto flex max-w-2xl flex-grow flex-col overflow-auto px-5",
           readingData?.readings.length === 1 && "items-center justify-center",
         )}
       >
