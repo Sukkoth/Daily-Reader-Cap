@@ -4,7 +4,7 @@ import HomeStats from "../home-stats";
 
 function Home() {
   return (
-    <div className="p-3 pb-5 flex flex-col h-[92.5dvh] bg-red">
+    <div className="flex h-[90.5dvh] flex-col p-3 pb-5">
       <HomeHeader />
       <Preview />
       <HomeStats />
