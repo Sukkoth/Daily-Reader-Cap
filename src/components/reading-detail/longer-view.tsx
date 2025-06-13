@@ -38,13 +38,9 @@ function LongerView({ reading }: Props) {
   useScrollToHash();
 
   return (
-    <div className="pb-16">
+    <div className="space-y-10 pt-5 pb-16">
       {reading.readings.map((readingItem, index) => (
-        <div
-          className="mt-10 scroll-mt-[100px]"
-          key={index}
-          id={readingItem.book}
-        >
+        <div className="scroll-mt-[20px]" key={index} id={readingItem.book}>
           <p className="text-gray-400">{getPart(index)}</p>
           <div className="flex items-center justify-between">
             <h1 className="text-[26px] font-medium">{readingItem.book}</h1>
