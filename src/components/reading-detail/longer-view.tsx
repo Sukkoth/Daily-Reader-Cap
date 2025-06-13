@@ -1,4 +1,4 @@
-import { Share2, Star } from "lucide-react";
+import { Star } from "lucide-react";
 import type { Reading, ReadingItem } from "../../types";
 import IconButton from "../icon-button";
 import useFavorites from "../../app-state/hooks/useFavorites";
@@ -6,6 +6,7 @@ import { toggleFavorite } from "../../utils/favorites-utils";
 import { useScrollToHash } from "../../hooks/useScrollToHash";
 import { cn } from "../../utils/cn";
 import useAppSettings from "../../app-state/hooks/useAppSettings";
+import ShareButton from "../share-button";
 
 type Props = {
   reading: Reading;
@@ -67,7 +68,13 @@ function LongerView({ reading }: Props) {
                   onClick={() => handleAddFavorite(readingItem)}
                 />
               )}
-              <IconButton icon={<Share2 className="text-gray-400" />} />
+              <ShareButton
+                shareOptions={{
+                  title: readingItem.book,
+                  text: `${readingItem.text}\n\n - ${readingItem.book}`,
+                  dialogTitle: "Share verse",
+                }}
+              />
             </div>
           </div>
           <p

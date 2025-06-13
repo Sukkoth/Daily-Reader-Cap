@@ -1,10 +1,11 @@
-import { Share2, Star } from "lucide-react";
+import { Star } from "lucide-react";
 import type { Reading } from "../../types";
 import IconButton from "../icon-button";
 import useFavorites from "../../app-state/hooks/useFavorites";
 import { toggleFavorite } from "../../utils/favorites-utils";
 import useAppSettings from "../../app-state/hooks/useAppSettings";
 import { cn } from "../../utils/cn";
+import ShareButton from "../share-button";
 
 type Props = {
   reading: Reading;
@@ -44,7 +45,13 @@ function SimpleView({ reading }: Props) {
         ) : (
           <IconButton icon={<Star />} onClick={handleAddFavorite} />
         )}
-        <IconButton icon={<Share2 />} />
+        <ShareButton
+          shareOptions={{
+            title: reading.readings[0].book,
+            text: `${reading?.readings[0].text}\n\n - ${reading?.readings[0].book}`,
+            dialogTitle: "Share verse",
+          }}
+        />
       </div>
     </div>
   );
