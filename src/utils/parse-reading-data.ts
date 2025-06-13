@@ -1,4 +1,9 @@
-import type { Holidays, RawReading, Reading } from "../types";
+import type {
+  FormattedHolidays,
+  Holidays,
+  RawReading,
+  Reading,
+} from "../types";
 import { readingsData } from "../data/data";
 import { isSunday } from "date-fns";
 
@@ -36,4 +41,50 @@ export function getTopSubTitle(reading: Reading | null): null | string {
   } else {
     return null;
   }
+}
+
+export function getHolidaysInMonth(selectedDate: Date): FormattedHolidays {
+  const month = selectedDate.getMonth();
+  const year = selectedDate.getFullYear();
+
+  const holidays: FormattedHolidays = {
+    christian: [],
+    mekaneYesus: [],
+    others: [],
+  };
+
+  const daysWithHolidays = readingsData.filter((item) => {
+    const itemDate = new Date(item.date);
+    return (
+      itemDate.getMonth() === month &&
+      itemDate.getFullYear() === year &&
+      item.holidays
+    );
+  });
+
+  daysWithHolidays.forEach((item) => {
+    const reading = parseReadingData(item);
+    if (reading?.holidays) {
+      holidays.christian = holidays.christian.concat(
+        reading?.holidays?.christian.map((holiday) => ({
+          date: new Date(item.date),
+          name: holiday,
+        })),
+      );
+      holidays.mekaneYesus = holidays.mekaneYesus.concat(
+        reading?.holidays?.mekaneYesus.map((holiday) => ({
+          date: new Date(item.date),
+          name: holiday,
+        })),
+      );
+      holidays.others = holidays.others.concat(
+        reading?.holidays?.others.map((holiday) => ({
+          date: new Date(item.date),
+          name: holiday,
+        })),
+      );
+    }
+  });
+
+  return holidays;
 }

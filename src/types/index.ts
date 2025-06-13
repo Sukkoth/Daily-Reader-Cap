@@ -14,6 +14,12 @@ export type Holidays = {
   others: string[];
 };
 
+export type FormattedHolidays = {
+  christian: { date: Date; name: string }[];
+  mekaneYesus: { date: Date; name: string }[];
+  others: { date: Date; name: string }[];
+};
+
 // type Holiday = Pick<RawReading, "date" | "holidays">;
 
 /**
