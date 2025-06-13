@@ -2,7 +2,7 @@ import { StarOff } from "lucide-react";
 
 export default function NoFavorites() {
   return (
-    <div className="flex flex-grow flex-col items-center justify-center gap-5 pt-5 text-center">
+    <div className="flex flex-grow flex-col items-center justify-center gap-5 pt-5 text-center select-none">
       <div className="rounded-full bg-orange-100 p-7 dark:bg-orange-200/30">
         <StarOff className="size-[4rem] rotate-[20deg] text-orange-400" />
       </div>
