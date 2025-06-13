@@ -119,19 +119,21 @@ export function getHolidaysForEachDay(
     });
   });
 
-  return Object.keys(holidaysForEachDay).map((date) => ({
-    date: new Date(date),
-    holidays: holidaysForEachDay[date].holidays,
-    count: {
-      christian: holidaysForEachDay[date].holidays.filter(
-        (holiday) => holiday.type === "christian",
-      ).length,
-      mekaneYesus: holidaysForEachDay[date].holidays.filter(
-        (holiday) => holiday.type === "mekaneYesus",
-      ).length,
-      others: holidaysForEachDay[date].holidays.filter(
-        (holiday) => holiday.type === "others",
-      ).length,
-    },
-  }));
+  return Object.keys(holidaysForEachDay)
+    .map((date) => ({
+      date: new Date(date),
+      holidays: holidaysForEachDay[date].holidays,
+      count: {
+        christian: holidaysForEachDay[date].holidays.filter(
+          (holiday) => holiday.type === "christian",
+        ).length,
+        mekaneYesus: holidaysForEachDay[date].holidays.filter(
+          (holiday) => holiday.type === "mekaneYesus",
+        ).length,
+        others: holidaysForEachDay[date].holidays.filter(
+          (holiday) => holiday.type === "others",
+        ).length,
+      },
+    }))
+    .sort((a, b) => a.date.getTime() - b.date.getTime());
 }
