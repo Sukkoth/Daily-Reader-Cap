@@ -6,6 +6,6 @@ export const FONT_SIZES = {
   },
   quoteMode: {
     min: 10,
-    max: 38,
+    max: 34,
   },
 };
