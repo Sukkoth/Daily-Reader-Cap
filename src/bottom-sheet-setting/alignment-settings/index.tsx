@@ -18,8 +18,8 @@ function AlignmentSettings({ mode }: Props) {
   const [settings, setSettings] = useAppSettings();
 
   function changeAlignment(alignment: TextAlign) {
-    setSettings((prev) => ({
-      ...prev,
+    setSettings(() => ({
+      ...settings,
       [settingItemKey]: alignment,
     }));
   }

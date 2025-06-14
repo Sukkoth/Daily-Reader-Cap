@@ -19,7 +19,7 @@ export default function FontSettings({ mode }: Props) {
   const [showFontSize, setShowFontSize] = useState(false);
 
   function handleFontSizeChange(change: 1 | -1) {
-    setSettings((prev) => {
+    setSettings(() => {
       const currentSize =
         settings[settingItemKey] ?? (mode === "simple" ? 30 : 18);
 
@@ -27,7 +27,7 @@ export default function FontSettings({ mode }: Props) {
       updatedSize = Math.max(minFontSize, Math.min(updatedSize, maxFontSize));
 
       return {
-        ...prev,
+        ...settings,
         [settingItemKey]: updatedSize,
       };
     });
